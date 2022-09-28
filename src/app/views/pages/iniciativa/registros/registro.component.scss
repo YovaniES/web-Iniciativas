@@ -1,0 +1,69 @@
+@import "variables.scss";
+
+.modal-title {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.cli-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.date-rango {
+  color: #5c5c5c;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.total {
+  color: #97999b;
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.w135 {
+  height: 48px;
+  min-width: 135px;
+  text-align: left;
+}
+
+.w155 {
+  height: 48px;
+  min-width: 250px;
+  text-align: left;
+}
+
+.rol_name {
+  padding: 1px 5px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 80%;
+  background-color: #03a9f4;
+}
+
+.rol_danger{
+  background-color: #ef5350;
+}
+
+.rol_info {
+  background-color: #398bf7;
+}
+
+
+.form-check-input:checked {
+  border: 1px solid #03A9F4;
+  background-color: #03A9F4;
+  border-radius: 1px;
+}
+.form-check-input[type=checkbox] {
+  border-radius: 1px;
+}
+@media (max-width: 850px) {
+}
