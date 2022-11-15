@@ -118,14 +118,14 @@ export class ModalActualizarIniciativaComponent implements OnInit {
 
   listEstados: any[] = [];
   getListEstados(){
-    let parametro: any[] = [{ queryId: 89 }];
+    let parametro: any[] = [{ queryId: 1 }];
     this.iniciativaService.getListEstados(parametro[0]).subscribe( resp => {
       this.listEstados = resp
     })
   };
 
   getListEstadosBypadre(idEstadoPadre: any){
-    let parametro: any[] = [{ queryId: 89 }];
+    let parametro: any[] = [{ queryId: 1 }];
    this.iniciativaService.getListEstados(parametro[0], false).subscribe((resp: any) => {
 
      resp.list.map((estado: Estados) => { //  console.log('ESTADOS', estado);
@@ -144,7 +144,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
 
   naturaleza: any[] = [];
   getListNaturaleza() {
-    let parametro: any[] = [{ queryId: 90 },
+    let parametro: any[] = [{ queryId: 1 },
     ];
     this.iniciativaService.getListNaturaleza(parametro[0]).subscribe(resp => {
         this.naturaleza = resp;
@@ -153,7 +153,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
 
   tecnologias:any[] = []
   getListaTecnologia(){
-    let parametro: any[]=[{ queryId: 91 }];
+    let parametro: any[]=[{ queryId: 3 }];
     this.iniciativaService.listaTecnologia(parametro[0]).subscribe(resp => {
         this.tecnologias = resp
     })
@@ -161,7 +161,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
 
   listVP: any[] = [];
   getListaVP() {
-    let parametro: any[] = [{ queryId: 92 }];
+    let parametro: any[] = [{ queryId: 4 }];
     this.iniciativaService.getListVP(parametro[0]).subscribe(resp => {
         this.listVP = resp
     });
@@ -169,7 +169,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
 
   listGerencia: any[] = [];
   getListGerencia() {
-    let parametro: any[] = [{ queryId: 93 }];
+    let parametro: any[] = [{ queryId: 5 }];
 
     this.iniciativaService.getListGerencia(parametro[0]).subscribe(resp => {
         this.listGerencia = resp;
@@ -192,7 +192,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
 
     const formValues = this.iniciativaEditForm.getRawValue();
     let parametro: any[] = [{
-      queryId: 99 ,
+      queryId: 11,
       mapValue: {
         "param_idIniciativa"   : formValues.idIniciativa,
         "param_cdescripcion"   : formValues.nombre,
@@ -254,7 +254,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
   cargarRegistroId(){
     this.spinner.show();
     let parametro: any[] = [{
-      queryId: 100,
+      queryId: 12,
       mapValue: {'param_idIniciativa': this.ID}
     }];
 
@@ -325,7 +325,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
       let id_motivo    = this.datosInicCambios.id_motivo ;
       let dFecha       = this.datosInicCambios.dFecha ;
       let parametro: any[] = [{
-        queryId: 98,
+        queryId: 10,
         mapValue: {
          "p_idiniciativa"        : this.ID ,
          "p_idEstado"            : idEstado ,
@@ -348,7 +348,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
   // let currentUser = this.authService.getUsername();
   this.spinner.show();
     let parametro: any[] = [{
-      queryId: 94,
+      queryId: 6,
       mapValue: {
         'param_id_iniciativa': this.ID
       }

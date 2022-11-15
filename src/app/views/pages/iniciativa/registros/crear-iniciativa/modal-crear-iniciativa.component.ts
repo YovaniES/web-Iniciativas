@@ -82,7 +82,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
   listEstados: Estados[] = [];
   estadosActivoS: Estados[] = [];
   getListEstados() {
-    let parametro: any[] = [{ queryId: 89 }];
+    let parametro: any[] = [{ queryId: 1 }];
 
     this.iniciativaService.getListEstados(parametro[0]).subscribe((resp) => {
       this.listEstados    = resp;   // console.log('ESTADOS', resp);
@@ -92,7 +92,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
 
   naturaleza: any[] = [];
   getListNaturaleza() {
-    let parametro: any[] = [{ queryId: 90 }];
+    let parametro: any[] = [{ queryId: 2 }];
     this.iniciativaService.getListNaturaleza(parametro[0]).subscribe((resp: any) => {
         this.naturaleza = resp;
       });
@@ -100,7 +100,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
 
   tecnologias:any[] = []
   getListaTecnologia(){
-    let parametro: any[]=[{ queryId: 91 }];
+    let parametro: any[]=[{ queryId: 3 }];
     this.iniciativaService.listaTecnologia(parametro[0]).subscribe(resp => {
         this.tecnologias = resp
     })
@@ -108,7 +108,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
 
     listVP: any[] = [];
     getListaVP() {
-      let parametro: any[] = [{ queryId: 92 }];
+      let parametro: any[] = [{ queryId: 4 }];
       this.iniciativaService.getListVP(parametro[0]).subscribe(resp => {
           this.listVP = resp
       });
@@ -116,7 +116,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
 
   listGerencia: any[] = [];
   getListGerencia() {
-    let parametro: any[] = [{ queryId: 93 }];
+    let parametro: any[] = [{ queryId: 5 }];
 
     this.iniciativaService.getListGerencia(parametro[0]).subscribe(resp => {
         this.listGerencia = resp;
@@ -130,7 +130,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
     const formValues = this.iniciativaForm.getRawValue();
 
     let parametro: any =  {
-        queryId: 97,
+        queryId: 9,
         mapValue: {
           p_cdescripcion    : formValues.nombre,
           p_cod_proyecto    : formValues.codigo,

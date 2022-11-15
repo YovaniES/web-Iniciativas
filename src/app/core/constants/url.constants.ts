@@ -1,4 +1,4 @@
-const ENVIROMENT: string = 'DEV';
+const ENVIROMENT: string = 'PROD';
 
 // let MAIN_PATH_NET = 'http://backtools.indratools.com/api/configurador/';
 
@@ -6,15 +6,18 @@ let MAIN_PATH_NET = '';
 let MAIN_PATH_AUTH = '';
 switch (ENVIROMENT) {
   case 'DEV':
-    MAIN_PATH_AUTH = 'http://seguridadweb.indratools.com/aut/seguridad';
-    MAIN_PATH_NET  = 'https://localhost:3061/api/configurador/';
+    // MAIN_PATH_AUTH = 'http://seguridadweb.indratools.com/aut/seguridad';
+    // MAIN_PATH_NET  = 'https://localhost:3061/api/configurador/';
 
     break;
   case 'QA':
     MAIN_PATH_AUTH = '';
     break;
   case 'PROD':
+    MAIN_PATH_NET  = 'https://localhost:3061/api/configurador/';
+
     //  MAIN_PATH_NET = 'http://backtools.indratools.com/api/configurador/';
+    MAIN_PATH_AUTH = 'http://seguridadweb.indratools.com/aut/seguridad';
     break;
   default:
     break;

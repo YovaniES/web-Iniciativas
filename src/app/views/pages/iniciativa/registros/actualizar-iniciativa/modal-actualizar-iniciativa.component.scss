@@ -33,7 +33,7 @@
 .pr-module {
   &-container {
     margin: 2px 0;
-    padding: 15px;
+    padding: 8px;
     border: dashed 1px #d3d4d3;
     border-radius: 2px;
   }
@@ -109,6 +109,14 @@
   }
 }
 
+// ::ng-deep .mat-form-field-wrapper {
+//   padding-bottom: 0.14em;
+// }
+
+// ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+//   margin: 0 0;
+// }
+
 @media (max-width: 850px) {
   .modal-title {
     font-size: 1.2rem;
@@ -121,7 +129,7 @@
 
   .pr-module {
     &-container {
-      padding: 5px;
+      padding: 4px;
     }
   }
 }

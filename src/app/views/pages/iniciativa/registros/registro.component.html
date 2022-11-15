@@ -82,13 +82,12 @@
 
             <div class="flex-1"></div>
 
-            <div class="cli-form-buttons" style="margin-top: 0">
+            <div class="cli-form-buttons" style="margin-top: 2px">
               <button
                 type="submit"
-                class="cli-btn btn-grey"
+                class="cli-btn btn-m btn-cancel"
                 style="border-radius: 2px; padding: 0.225rem 0.75rem"
-                (click)="limpiarFiltro()"
-              ><mat-icon class="icon-18">rotate_left</mat-icon>
+                (click)="limpiarFiltro()"><mat-icon class="icon-18">rotate_left</mat-icon>
                 Limpiar
               </button>
 
@@ -96,9 +95,7 @@
                 type="button"
                 class="cli-btn btn-blue-light"
                 style="border-radius: 2px; padding: 0.225rem 0.75rem"
-                (click)="buscarOcargarRegistro()"
-
-                ><mat-icon class="icon-18">search</mat-icon>
+                (click)="buscarOcargarRegistro()"><mat-icon class="icon-18">search</mat-icon>
                 Buscar
               </button>
             </div>
@@ -164,13 +161,13 @@
                     matTooltip="Editar"
                     class="icon-btn btn-trans c-blue"
                     (click)="editarIniciativa(registro.idIniciativa)"
-                  ><mat-icon class="icon-18">edit</mat-icon>
+                  ><mat-icon class="icon-13">edit</mat-icon>
                   </button>
                   <button
                     matTooltip="Eliminar"
                     class="icon-btn btn-trans c-fucsia"
                     (click)="eliminarIniciativa(registro.idIniciativa)"
-                  ><mat-icon class="icon-18">delete_forever</mat-icon>
+                  ><mat-icon class="icon-13">delete_forever</mat-icon>
                   </button>
                 </div>
               </td>
@@ -182,8 +179,19 @@
               <td>{{ registro.responsable }}</td>
               <td class="w155">{{ registro.gerencia_beneficiaria }}</td>
               <td class="w135">{{ registro.naturaleza }}</td>
-              <td>
+              <!-- <td>
                 <span class="rol_name" >{{registro.userCrea}}</span>
+              </td> -->
+
+              <td style="text-align:left ">
+                <div class="cli-table-user">
+                  <button
+                    matTooltip={{registro.userCrea}}
+                    class="icon-btn btn-trans"
+                    style="color: #4ba8fa;"
+                    ><mat-icon class="icon-16">person</mat-icon>
+                  </button>{{registro.userCrea}}
+                </div>
               </td>
               <!-- <td>
                 <span *ngIf="registro.rol == 'Usuario'" class="rol_name rol_danger">{{registro.userName}}</span>

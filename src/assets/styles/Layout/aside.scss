@@ -64,7 +64,7 @@
 .menu-link {
   padding: 9px 25px;
   cursor: pointer;
-  min-height: 44px;
+  min-height: 40px;
   display: flex;
   flex-grow: 1;
   align-items: stretch;
@@ -72,7 +72,7 @@
   text-decoration: none;
   position: relative;
   transition: 0.3s ease;
-  background-color: #24344b;
+  // background-color: #24344b;
   color: #fff;
 }
 .menu-link:hover {
@@ -162,7 +162,7 @@
 
 .submenu-icon {
   text-align: left;
-  flex: 0 0 35px;
+  flex: 0 0 30px;
 }
 .aside-divider {
   width: 80%;

@@ -27,7 +27,7 @@ export class AuthService {
 
   getRolID(){
     const decodedToken: any = this.decodeToken();
-    // console.log('TOKEN', decodedToken);
+    console.log('TOKEN', decodedToken);
     return decodedToken ? decodedToken.ROL_ID : '';
   }
 
@@ -53,7 +53,7 @@ export class AuthService {
 
   esUsuarioGestor(): boolean{
     const usuarioLogeado:any = this.decodeToken();
-    // console.log('ROL_ID', usuarioLogeado);
+    console.log('ROL_ID', usuarioLogeado);
 
     if (!usuarioLogeado || usuarioLogeado.ROL_ID != ROL_GESTOR.rolID ) {
       return false
@@ -64,13 +64,13 @@ export class AuthService {
 
   getUsername() {
     const decodedToken: any = this.decodeToken();
-    // console.log('ROL', decodedToken);
+    console.log('ROL', decodedToken);
     return decodedToken ? decodedToken.name : '';
   }
 
   getCurrentUser() {
     const currentUser: any = localStorage.getItem('currentUser');
-    // console.log('USER-ACTUAL',JSON.parse(currentUser));
+    console.log('USER-ACTUAL',JSON.parse(currentUser));
     return of(currentUser ? JSON.parse(currentUser) : '');
   }
 

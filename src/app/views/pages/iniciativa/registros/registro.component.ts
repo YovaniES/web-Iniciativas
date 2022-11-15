@@ -75,7 +75,7 @@ export class RegistroComponent implements OnInit {
   listEstados: any[] = [];
   estadosActivos: Estados[] = [];
   getListEstados(){
-    let parametro: any[] = [{ queryId: 89 }];
+    let parametro: any[] = [{ queryId: 1 }];
     this.iniciativaService.getListEstados(parametro[0]).subscribe(resp => {
       this.listEstados = resp;                                                     // console.log('LIST_ESTADOS', resp);
       this.estadosActivos = resp.filter((estAct: Estados) => estAct.iCiclo == 0);  //console.log('EST_ACTIVOS', this.estadosActivos);
@@ -84,7 +84,7 @@ export class RegistroComponent implements OnInit {
 
   naturaleza: any[] = [];
   getListNaturaleza() {
-    let parametro: any[] = [{ queryId: 90, }];
+    let parametro: any[] = [{ queryId: 2, }];
     this.iniciativaService.getListNaturaleza(parametro[0]).subscribe(resp => {
           this.naturaleza = resp;
           });
@@ -92,7 +92,7 @@ export class RegistroComponent implements OnInit {
 
   listGerencia: any[] = [];
   getListGerencia() {
-    let parametro: any[] = [{ queryId: 93 }];
+    let parametro: any[] = [{ queryId: 5 }];
     this.iniciativaService.getListGerencia(parametro[0]).subscribe(resp => {
         this.listGerencia = resp;
       });
@@ -102,7 +102,7 @@ export class RegistroComponent implements OnInit {
   buscarOcargarRegistro(){
     this.blockUI.start("Cargando iniciativas...");
     let parametro: any[] = [{
-      "queryId": 96,
+      "queryId": 8,
       "mapValue": {
         "param_nombre"       : this.filtroForm.value.nombre,
         "param_codigo"       : this.filtroForm.value.codigo,
@@ -152,7 +152,7 @@ export class RegistroComponent implements OnInit {
     this.spinner.show();
 
     let parametro:any[] = [{
-      queryId: 95,
+      queryId: 7,
       mapValue: {
         'param_id_iniciativa' : id ,
         'CONFIG_REGIS_ID'     : this.userID ,

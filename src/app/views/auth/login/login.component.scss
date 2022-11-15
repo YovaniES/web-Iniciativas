@@ -1,10 +1,11 @@
 .view-backgrond {
-  background-image: url("../../../../assets/images/background/log7.jpg");
+  background-image: url("../../../../assets/images/background/ini-login.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1.7;
   width: 100%;
   height: 100%;
+  // transform: scaleX(-1);
 }
 
 .form-card {
@@ -21,7 +22,7 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
 
   margin-top: 20%;
@@ -43,7 +44,7 @@
 }
 
 .logo {
-  height: 85px;
+  height: 75px;
   // margin-bottom: -30px;
   margin-block: 20px;
 }
