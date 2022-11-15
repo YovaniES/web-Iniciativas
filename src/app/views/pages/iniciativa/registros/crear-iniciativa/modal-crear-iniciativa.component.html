@@ -107,6 +107,7 @@
               <input
                 type="number"
                 min="0"
+                style="text-align: center"
                 class="form-control cli-input-white"
                 formControlName="licencias"/>
                 <small class="form-text text-alert" *ngIf="campoNoValido('licencias')">La Licencia BP es obligatorio</small>
@@ -135,15 +136,16 @@
             <input
               type="number"
               min="0"
+              style="text-align: center"
               class="form-control cli-input-white"
               formControlName="qtrxMes"/>
               <small class="form-text text-alert" *ngIf="campoNoValido('qtrxMes')">El QTRX es obligatorio</small>
           </div>
 
           <div class="form-group col-sm-3 cli-tmoTrx">
-            <label>TMO POR TRX *</label>
+            <label>TMO por TRX *</label>
             <div class="row" style="padding: 0px">
-              <div class="col-sm-5 cli-form-element" style="padding: 2px 5px;">
+              <div class="col-sm-5 cli-form-element-trx" style="padding: 2px 5px;">
               <input
                 style="text-align: center;"
                 type="number"
@@ -152,7 +154,7 @@
                 formControlName="tmoTrx"/>
               </div>
 
-              <div class="col-sm-7 cli-form-element" style="padding: 2px 5px; margin-left: -8px;">
+              <div class="col-sm-7 cli-form-element-trx" style="padding: 2px 5px; margin-left: -8px;">
                   <select class="cli-input-white" style="margin-left: 2px"
                           formControlName="unidadTrx">
                     <option value="Minutos">Minutos</option>
@@ -191,7 +193,7 @@
 
           <div class="form-group col-sm-3">
             <legend class="col-form-label col-sm-12 pt-0">
-              Cuenta con flujo contextual *
+              Cuenta con flujo *
             </legend>
             <div class="row" style="margin-left: 0px">
               <div class="form-check col-sm-6">
@@ -224,13 +226,12 @@
     <div class="pr-subtitle mt-2">Diagnóstico *</div>
     <div class="pr-section">
       <div class="pr-module-container">
-        <div class="row was-validated g-3">
-          <div class="row mt-2">
+        <div class="row g-3">
             <div class="col-sm-6 cli-form-element mb-2">
               <label>Contexto *</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px;"
+                style="background-image: none; border-color: #a5a4a4; font-size: 11px;"
                 rows="2"
                 placeholder="Detalle el contexto y la problemática actual..."
                 formControlName="probActual">
@@ -242,11 +243,11 @@
               <label>Función Robotización *</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px;"
+                style="background-image: none; border-color: #a5a4a4; font-size: 11px;"
                 rows="2"
                 placeholder="Defina la problemática de la función .."
                 formControlName="funcRobotiz"
-              ></textarea>
+                ></textarea>
               <small class="form-text text-alert" *ngIf="campoNoValido('funcRobotiz')">La Función Rob. es obligatorio</small>
             </div>
 
@@ -254,11 +255,11 @@
               <label>Objetivo *</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px;"
+                style="background-image: none; border-color: #a5a4a4; font-size: 11px;"
                 rows="2"
                 placeholder="Defina los objetivos y alcances del RPA"
                 formControlName="defAlcance"
-              ></textarea>
+                ></textarea>
               <small class="form-text text-alert" *ngIf="campoNoValido('defAlcance')">El Objetivo es obligatorio</small>
             </div>
 
@@ -266,26 +267,24 @@
               <label>Riesgos *</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px;"
+                style="background-image: none; border-color: #a5a4a4; font-size: 11px;"
                 rows="2"
                 placeholder="Describa los riesgos de no realizar el RPA"
                 formControlName="riesgoNoRpa"
-              ></textarea>
+                ></textarea>
               <small class="form-text text-alert" *ngIf="campoNoValido('riesgoNoRpa')">El Riesgo es obligatorio</small>
             </div>
-          </div>
         </div>
       </div>
     </div>
     <!-- --------------------------------------------BOTONES ------------------------------------------>
     <div class="cli-form-buttons" style="margin-top: 3%">
-      <button class="cli-btn btn-m btn-grey" type="submit" (click)="close()">
+      <button class="cli-btn btn-m btn-cancel" type="submit" (click)="close()">
         <mat-icon class="icon-18">cancel</mat-icon> Cancelar
       </button>
       <button class="cli-btn btn-m btn-blue"
               (click)="crearIniciativa()"
-              [disabled]="iniciativaForm.invalid"
-              >
+              [disabled]="iniciativaForm.invalid">
               <mat-icon class="icon-18">save</mat-icon> Registrar
       </button>
     </div>

@@ -46,7 +46,7 @@ export class RegistroComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.hide();
     this.newFilfroForm();
-    this.buscarOcargarRegistro();
+    this.buscarOcargarIniciativa();
     this.getListEstados();
     this.getListGerencia();
     this.getListNaturaleza();
@@ -85,7 +85,7 @@ export class RegistroComponent implements OnInit {
   naturaleza: any[] = [];
   getListNaturaleza() {
     let parametro: any[] = [{ queryId: 2, }];
-    this.iniciativaService.getListNaturaleza(parametro[0]).subscribe(resp => {
+    this.iniciativaService.getListNaturaleza(parametro[0]).subscribe((resp: any) => {
           this.naturaleza = resp;
           });
   }
@@ -93,13 +93,13 @@ export class RegistroComponent implements OnInit {
   listGerencia: any[] = [];
   getListGerencia() {
     let parametro: any[] = [{ queryId: 5 }];
-    this.iniciativaService.getListGerencia(parametro[0]).subscribe(resp => {
+    this.iniciativaService.getListGerencia(parametro[0]).subscribe((resp: any) => {
         this.listGerencia = resp;
       });
   }
 
-  registros: any[] = [];
-  buscarOcargarRegistro(){
+  iniciativas: any[] = [];
+  buscarOcargarIniciativa(){
     this.blockUI.start("Cargando iniciativas...");
     let parametro: any[] = [{
       "queryId": 8,
@@ -115,12 +115,12 @@ export class RegistroComponent implements OnInit {
         "fin"   : this.datepipe.transform(this.filtroForm.value.fechaCreaFin,'yyyy/MM/dd'),
       }
     }];
-    this.iniciativaService.buscarOcargarRegistro(parametro[0]).subscribe(resp => {
+    this.iniciativaService.buscarOcargarIniciativa(parametro[0]).subscribe((resp: any) => {
     this.blockUI.stop();
 
     //  console.log('INIC_O_BUSQ', resp, resp.length);
-      this.registros = [];
-      this.registros = resp;
+      this.iniciativas = [];
+      this.iniciativas = resp;
 
       this.spinner.hide();
     });
@@ -136,9 +136,9 @@ export class RegistroComponent implements OnInit {
     this.spinner.show();
 
     if (this.totalfiltro != this.totalIniciativa) {
-      this.iniciativaService.buscarOcargarRegistro(offset.toString()).subscribe( resp => {
+      this.iniciativaService.buscarOcargarIniciativa(offset.toString()).subscribe( (resp: any) => {
             // console.log('TABLA', resp);
-            this.registros = resp;
+            this.iniciativas = resp;
             this.spinner.hide();
           });
     } else {
@@ -172,7 +172,7 @@ export class RegistroComponent implements OnInit {
       if (resp.value) {
         this.iniciativaService.eliminarIniciativa(parametro[0]).subscribe(resp => {
 
-          this.buscarOcargarRegistro();
+          this.buscarOcargarIniciativa();
 
             Swal.fire({
               title: 'Eliminar Iniciativa',
@@ -190,11 +190,11 @@ export class RegistroComponent implements OnInit {
     this.filtroForm.reset('', {emitEvent: false})
     this.newFilfroForm()
 
-    this.buscarOcargarRegistro();
+    this.buscarOcargarIniciativa();
   };
 
-  exportarRegistro(){
-    this.exportExcellService.exportarExcel(this.registros, 'Iniciativa')
+  exportarIniciativa(){
+    this.exportExcellService.exportarExcel(this.iniciativas, 'Iniciativa')
   }
 
   crearIniciativa(){
@@ -202,7 +202,7 @@ export class RegistroComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(resp => {
       if (resp) {
-        this.buscarOcargarRegistro()
+        this.buscarOcargarIniciativa()
       }
     })
   }
@@ -212,7 +212,7 @@ export class RegistroComponent implements OnInit {
       .open(ModalActualizarIniciativaComponent, { width: '65%', height: '90%', data: idIniciativa, })
       .afterClosed().subscribe((resp) => {
         if (resp) {
-          this.buscarOcargarRegistro();
+          this.buscarOcargarIniciativa();
         }
       });
   }

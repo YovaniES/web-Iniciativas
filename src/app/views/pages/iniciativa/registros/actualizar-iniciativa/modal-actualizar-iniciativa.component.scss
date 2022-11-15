@@ -9,6 +9,21 @@
   text-align: center;
 }
 
+.form-control {
+  font-size: 12px;
+}
+
+.cli-table {
+  width: 100%;
+  background-color: #fff;
+  & th {
+    padding: 4px;
+    font-weight: 300 !important;
+    text-align: center;
+    font-size: 11px;
+  }
+}
+
 .newvac-wrapper {
   border-radius: 3px;
   max-width: 98%;
@@ -55,7 +70,7 @@
   border: solid 0.5px $color-blue;
   border-radius: 4px;
   background: #f8f9fa;
-  padding: 4px;
+  padding: 5px;
 }
 
 .total {
@@ -64,9 +79,15 @@
 }
 
 .cli-tmoTrx {
-  margin: 16px 0px 0px;
+  margin: 8px 0px 0px;
   font-size: 12.8px;
-  padding: 0 6px;
+  padding: 0 4px;
+}
+
+.cli-form-element-trx {
+  display: flex;
+  flex-direction: column;
+  margin-top: -2px;
 }
 
 // BARRA LATERAL----------------------------------------------------------------------------------------
@@ -108,14 +129,6 @@
     letter-spacing: 1px;
   }
 }
-
-// ::ng-deep .mat-form-field-wrapper {
-//   padding-bottom: 0.14em;
-// }
-
-// ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
-//   margin: 0 0;
-// }
 
 @media (max-width: 850px) {
   .modal-title {

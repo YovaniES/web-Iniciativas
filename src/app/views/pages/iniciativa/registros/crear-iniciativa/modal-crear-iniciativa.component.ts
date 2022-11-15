@@ -101,7 +101,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
   tecnologias:any[] = []
   getListaTecnologia(){
     let parametro: any[]=[{ queryId: 3 }];
-    this.iniciativaService.listaTecnologia(parametro[0]).subscribe(resp => {
+    this.iniciativaService.listaTecnologia(parametro[0]).subscribe((resp: any) => {
         this.tecnologias = resp
     })
   }
@@ -109,8 +109,8 @@ export class ModalCrearIniciativaComponent implements OnInit {
     listVP: any[] = [];
     getListaVP() {
       let parametro: any[] = [{ queryId: 4 }];
-      this.iniciativaService.getListVP(parametro[0]).subscribe(resp => {
-          this.listVP = resp
+      this.iniciativaService.getListVP(parametro[0]).subscribe((resp: any) => {
+          this.listVP = resp;
       });
     }
 
@@ -118,7 +118,7 @@ export class ModalCrearIniciativaComponent implements OnInit {
   getListGerencia() {
     let parametro: any[] = [{ queryId: 5 }];
 
-    this.iniciativaService.getListGerencia(parametro[0]).subscribe(resp => {
+    this.iniciativaService.getListGerencia(parametro[0]).subscribe((resp: any) => {
         this.listGerencia = resp;
       });
   }

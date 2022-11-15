@@ -18,8 +18,7 @@
               <input
                 type="text"
                 class="form-control"
-                formControlName="codigo"
-              />
+                formControlName="codigo"/>
             </div>
             <div class="col-sm-3 cli-form-element">
               <label class="form-label">Estado</label>
@@ -45,26 +44,17 @@
               </select>
             </div>
 
-            <div class="col-sm-2 cli-form-element">
-              <div class="form-group">
-                <label>Fecha creación <span class="date-rango">(desde)</span></label>
-                 <input
-                  type="date"
-                  class="form-control"
-                  formControlName="fechaCreaInicio"
-                />
-              </div>
-            </div>
+            <div class="col-sm-3 cli-form-element">
+              <label class="form-label">Fecha de registro Iniciativas</label>
 
-            <div class="col-sm-2 cli-form-element">
-              <div class="form-group">
-                <label>Fecha creación <span class="date-rango">(hasta)</span></label>
-                <input
-                  type="date"
-                  class="form-control"
-                  formControlName="fechaCreaFin"
-                />
-              </div>
+              <mat-form-field color="accent" appearance="outline">
+                <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate formControlName="fechaCreaInicio"  placeholder="Desde"   >
+                  <input matEndDate   formControlName="fechaCreaFin"     placeholder="Hasta" >
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
             </div>
 
             <div class="col-sm-3 cli-form-element" style="margin-top: 45px">
@@ -73,8 +63,7 @@
                   <input class="form-check-input"
                          type="checkbox"
                          id="inlineCheckbox1"
-                         formControlName="listarSoloActivos"
-                         >
+                         formControlName="listarSoloActivos">
                   <label class="form-check-label" for="inlineCheckbox1">Iniciativas activas</label>
                 </div>
               </div>
@@ -95,7 +84,7 @@
                 type="button"
                 class="cli-btn btn-blue-light"
                 style="border-radius: 2px; padding: 0.225rem 0.75rem"
-                (click)="buscarOcargarRegistro()"><mat-icon class="icon-18">search</mat-icon>
+                (click)="buscarOcargarIniciativa()"><mat-icon class="icon-18">search</mat-icon>
                 Buscar
               </button>
             </div>
@@ -103,7 +92,7 @@
         </div>
       </div>
 
-      <!-- BOTON MODAL PARA CREAR REGISTRO -->
+      <!-- BOTON MODAL PARA CREAR iniciciativa -->
       <div style="display: flex" class="mt-4 mb-1">
         <button
           class="cli-btn btn-blue"
@@ -115,16 +104,16 @@
 
         <div class="cli-table-actions">
           <button
-            matTooltip="Descargar registro"
+            matTooltip="Descargar iniciciativa"
             class="icon-btn btn-trans c-green-light mx-1"
-            (click)="exportarRegistro()"
+            (click)="exportarIniciativa()"
           ><mat-icon class="icon-18">file_download</mat-icon>Exportar
           </button>
         </div>
 
         <div class="flex-1"></div>
         <div class="mt-2" style="color: #345df3; font-weight: 600;">
-          Total : <span class="total">{{ registros.length }} Registros</span>
+          Total : <span class="total">{{ iniciativas.length }} Registros</span>
         </div>
       </div>
 
@@ -148,57 +137,56 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let registro of registros | paginate:
+            <tr *ngFor="let iniciciativa of iniciativas | paginate:
                       {
                         itemsPerPage: pageSize,
                         currentPage: page,
                         totalItems: totalIniciativa
-                      } "
-            >
+                      } ">
               <td>
                 <div class="cli-table-actions">
                   <button
                     matTooltip="Editar"
                     class="icon-btn btn-trans c-blue"
-                    (click)="editarIniciativa(registro.idIniciativa)"
+                    (click)="editarIniciativa(iniciciativa.idIniciativa)"
                   ><mat-icon class="icon-13">edit</mat-icon>
                   </button>
                   <button
                     matTooltip="Eliminar"
                     class="icon-btn btn-trans c-fucsia"
-                    (click)="eliminarIniciativa(registro.idIniciativa)"
-                  ><mat-icon class="icon-13">delete_forever</mat-icon>
+                    (click)="eliminarIniciativa(iniciciativa.idIniciativa)"
+                    ><mat-icon class="icon-13">delete_forever</mat-icon>
                   </button>
                 </div>
               </td>
-              <td>{{ registro.idIniciativa }}</td>
-              <td class="w155">{{ registro.nombre | uppercase }}</td>
-              <td class="w135">{{ registro.codigo | uppercase }}</td>
-              <td>{{ registro.estado }}</td>
-              <td class="w135">{{ registro.po_proyecto | firstCapital }}</td>
-              <td>{{ registro.responsable }}</td>
-              <td class="w155">{{ registro.gerencia_beneficiaria }}</td>
-              <td class="w135">{{ registro.naturaleza }}</td>
+              <td>{{ iniciciativa.idIniciativa }}</td>
+              <td class="w155">{{ iniciciativa.nombre | uppercase }}</td>
+              <td class="w135">{{ iniciciativa.codigo | uppercase }}</td>
+              <td style="text-align:left">{{ iniciciativa.estado }}</td>
+              <td class="w135">{{ iniciciativa.po_proyecto | firstCapital }}</td>
+              <td style="text-align: left">{{ iniciciativa.responsable }}</td>
+              <td class="w155">{{ iniciciativa.gerencia_beneficiaria }}</td>
+              <td class="w135">{{ iniciciativa.naturaleza }}</td>
               <!-- <td>
-                <span class="rol_name" >{{registro.userCrea}}</span>
+                <span class="rol_name" >{{iniciciativa.userCrea}}</span>
               </td> -->
 
               <td style="text-align:left ">
                 <div class="cli-table-user">
                   <button
-                    matTooltip={{registro.userCrea}}
+                    matTooltip={{iniciciativa.userCrea}}
                     class="icon-btn btn-trans"
                     style="color: #4ba8fa;"
                     ><mat-icon class="icon-16">person</mat-icon>
-                  </button>{{registro.userCrea}}
+                  </button>{{iniciciativa.userCrea}}
                 </div>
               </td>
               <!-- <td>
-                <span *ngIf="registro.rol == 'Usuario'" class="rol_name rol_danger">{{registro.userName}}</span>
-                <span *ngIf="registro.rol == 'Gestor'" class="rol_name rol_info" >{{registro.userName}}</span>
+                <span *ngIf="iniciciativa.rol == 'Usuario'" class="rol_name rol_danger">{{iniciciativa.userName}}</span>
+                <span *ngIf="iniciciativa.rol == 'Gestor'" class="rol_name rol_info" >{{iniciciativa.userName}}</span>
               </td> -->
 
-              <td>{{ registro.fecha_creacion }}</td>
+              <td style="min-width: 100px">{{ iniciciativa.fecha_creacion }}</td>
             </tr>
           </tbody>
         </table>
@@ -209,10 +197,10 @@
         </div>
 
         <div
-          *ngIf="!loadingItem && registros.length == 0"
+          *ngIf="!loadingItem && iniciativas.length == 0"
           class="cli-loader mt-5"
           style="color: #f83434"
-        >No hay registros para mostrar
+        >No hay iniciativas para mostrar
         </div>
       </div>
     </div>
@@ -222,8 +210,7 @@
         previousLabel="Anterior"
         nextLabel="Siguiente"
         [responsive]="false"
-        (pageChange)="cambiarPagina($event)"
-      >
+        (pageChange)="cambiarPagina($event)">
       </pagination-controls>
     </div>
   </div>

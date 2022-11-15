@@ -16,6 +16,7 @@ import { Estados } from 'src/app/core/interfaces/estados.interface';
 })
 export class ModalActualizarIniciativaComponent implements OnInit {
   @BlockUI() blockUI!: NgBlockUI;
+  loadingItem: boolean = false;
   userName: string = '';
   userID: number = 0;
   iniciativaEditForm!: FormGroup
@@ -144,7 +145,7 @@ export class ModalActualizarIniciativaComponent implements OnInit {
 
   naturaleza: any[] = [];
   getListNaturaleza() {
-    let parametro: any[] = [{ queryId: 1 },
+    let parametro: any[] = [{ queryId: 2 },
     ];
     this.iniciativaService.getListNaturaleza(parametro[0]).subscribe(resp => {
         this.naturaleza = resp;

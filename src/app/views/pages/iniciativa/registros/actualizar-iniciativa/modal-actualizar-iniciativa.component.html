@@ -14,9 +14,9 @@
 
     <!-- -------------------------------------------REGISTROS ACTUALIZAR------------------------------->
     <div style="display: flex" >
-      <div class="col-1 pr-subtitle mt-2">Registros</div>
+      <div class="col-1 pr-subtitle">Registros</div>
       <div class="flex-1"></div>
-      <div  class="mt-2 id-iniciativa">ID : <span  class="total">{{iniciativa_Id}}</span></div>
+      <div  class="id-iniciativa">ID : <span  class="total">{{iniciativa_Id}}</span></div>
     </div>
 
     <div class="pr-section">
@@ -122,17 +122,18 @@
               formControlName="planner"/>
           </div>
 
-          <div class="col-sm-3 cli-form-element">
-            <label>Licencias BP</label>
+          <div class="col-sm-1 cli-form-element">
+            <label>Lic. BP</label>
             <input
               min="0"
               type="number"
+              style="text-align: center"
               class="form-control cli-input-white"
               formControlName="licencias"/>
           </div>
 
-          <div class="col-sm-3 cli-form-element">
-            <label>Tecnología de Solución</label>
+          <div class="col-sm-2 cli-form-element">
+            <label>Técn. de Solución</label>
             <select
               class="cli-input-white"
               formControlName="tecnologia">
@@ -168,7 +169,7 @@
     </div>
 
     <!-- --------------------------------------------CONTEXTO ----------------------------------------->
-    <div class="pr-subtitle mt-2">Contexto</div>
+    <div class="pr-subtitle">Contexto</div>
     <div class="pr-section">
       <div class="pr-module-container">
         <div class="row g-3">
@@ -177,14 +178,15 @@
             <input
               type="number"
               min="0"
+              style="text-align: center"
               class="form-control cli-input-white"
               formControlName="qtrxMes"/>
           </div>
 
           <div class="form-group col-sm-3 cli-tmoTrx">
-            <label>TMO POR TRX</label>
+            <label>TMO por TRX</label>
             <div class="row" style="padding: 0px">
-              <div class="col-sm-5 cli-form-element" style="padding: 2px 5px;">
+              <div class="col-sm-5 cli-form-element-trx" style="padding: 2px 5px;">
               <input
                 style="text-align: center;"
                 type="number"
@@ -193,7 +195,7 @@
                 formControlName="tmoTrx"/>
               </div>
 
-              <div class="col-sm-7 cli-form-element" style="padding: 2px 5px; margin-left: -8px;">
+              <div class="col-sm-7 cli-form-element-trx" style="padding: 2px 5px; margin-left: -8px;">
                   <select class="cli-input-white" style="margin-left: 2px"
                           formControlName="unidadTrx">
                     <option value="Minutos">Minutos</option>
@@ -229,7 +231,7 @@
           </div>
 
           <div class="form-group col-sm-3">
-            <legend class="col-form-label col-sm-12 pt-0">Cuenta con flujo contextual</legend>
+            <legend class="col-form-label col-sm-12 pt-0">Cuenta con flujo</legend>
             <div class="row" style="margin-left: 0px">
               <div class="form-check col-sm-6">
                 <input
@@ -257,17 +259,16 @@
     </div>
 
     <!-- --------------------------------------------DIAGNOSTICO -------------------------------------->
-    <div class="pr-subtitle mt-2">Diagnóstico</div>
+    <div class="pr-subtitle">Diagnóstico</div>
     <div class="pr-section">
       <div class="pr-module-container">
-        <div class="row was-validated g-3">
-          <div class="row mt-2">
+        <div class="row g-3">
             <div class="col-sm-6 cli-form-element mb-2">
               <label>Contexto</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px;"
-                rows="2"
+                style="background-image: none; border-color: #a5a4a4; font-size: 11px;"
+                rows="3"
                 placeholder="Detalle el contexto y la problemática actual..."
                 formControlName="probActual"
                 ></textarea>
@@ -277,8 +278,8 @@
               <label>Función Robotización</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px; font-size: 14px;"
-                rows="2"
+                style="background-image: none; border-color: #a5a4a4; font-size: 11px;"
+                rows="3"
                 placeholder="Defina la problemática de la función .."
                 formControlName="funcRobotiz"
               ></textarea>
@@ -288,47 +289,35 @@
               <label>Objetivo</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px;"
-                rows="2"
+                style="background-image: none; border-color: #a5a4a4; font-size: 11px;"
+                rows="3"
                 placeholder="Defina los objetivos y alcances del RPA"
                 formControlName="defAlcance">
               </textarea>
             </div>
 
-            <!-- <div class="col-sm-6 cli-form-element mb-2">
+            <div class="col-sm-6 cli-form-element mb-2">
               <label>Riesgos</label>
               <textarea
                 class="form-control"
-                style="background-image: none; border-color: #a5a4a4; font-size: 14px;"
-                rows="2"
-                placeholder="Describa los riesgos de no realizar el RPA"
-                formControlName="riesgoNoRpa">
-              </textarea>
-            </div> -->
-
-            <div class="col-sm-6 cli-form-element mb-2">
-              <label>Riesgos *</label>
-              <textarea
-                class="form-control"
-                style="background-image: none; border-color: #bdbdbd;  font-size: 12px;"
+                style="background-image: none; border-color: #bdbdbd;  font-size: 11px;"
                 rows="3"
                 placeholder="Describa los riesgos de no realizar el RPA"
                 formControlName="riesgoNoRpa">
               </textarea>
             </div>
-          </div>
         </div>
       </div>
     </div>
 
     <!-- --------------------------------------------HISTORICO CAMBIOS -------------------------------------->
-    <div class="pr-subtitle mt-2">Historico de Cambios de Estado</div>
+    <div class="pr-subtitle">Historico de Cambios de Estado</div>
     <div class="pr-section">
       <div class="pr-module-container">
         <div style="overflow: auto; min-height: 150px">
           <table class="cli-table stripedtable underlinedtable">
             <thead>
-              <tr class="bgc-green c-white">
+              <tr class="bgc-blue-light c-white">
                 <th>#</th>
                 <th>ID Iniciativa</th>
                 <th>Estados</th>
@@ -342,13 +331,23 @@
               <tr *ngFor="let cambios of historicoCambios; let i = index">
                 <td>{{ i + 1 }}</td>
                 <td>{{ cambios.idiniciativa }}</td>
-                <td>{{ cambios.estado }}</td>
+                <td style="text-align: left">{{ cambios.estado }}</td>
                 <td>{{ cambios.motivo }}</td>
                 <td>{{ cambios.fecha_cambio }}</td>
-                <td>{{ cambios.usuario }}</td>
+                <td style="text-align: left">{{ cambios.usuario }}</td>
               </tr>
             </tbody>
           </table>
+          <div class="cli-loader" *ngIf="loadingItem">
+            <mat-spinner style="margin-right: 20px" diameter="20"></mat-spinner>cargando...
+          </div>
+
+          <div
+            *ngIf="historicoCambios.length == 0"
+            class="cli-loader mt-2"
+            style="color: #c9c9c9; font-size: 12px;"
+            >Aquí se mostrará el histórico de estados...
+          </div>
         </div>
       </div>
     </div>
@@ -358,7 +357,7 @@
    <!-- --------------------------------------------BOTONES ------------------------------------------------>
    <div class="cli-form-buttons mb-2">
     <button
-      class="cli-btn btn-m btn-grey"
+      class="cli-btn btn-m btn-cancel"
       type="submit"
       data-dismiss="modal"
       (click)="close()"

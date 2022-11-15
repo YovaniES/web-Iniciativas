@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { API_INIICIATIVAS, API_ROLE } from '../constants/url.constants';
+import { API_INICIATIVAS, API_ROLE } from '../constants/url.constants';
 import { Estados } from '../interfaces/estados.interface';
 import { Role } from '../interfaces/role.interface';
 
@@ -13,7 +13,7 @@ export class IniciativaService {
 
   // OBTENEMOS LA DATA DESDE .NET
   listaTecnologia(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj).pipe(
+    return this.http.post(API_INICIATIVAS, obj).pipe(
       map((tecno: any) => {
         return tecno.list.map((tec: any) => {
           return {
@@ -27,7 +27,7 @@ export class IniciativaService {
 
   // Lista de Naturaleza
   getListNaturaleza(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj).pipe(
+    return this.http.post(API_INICIATIVAS, obj).pipe(
       map((naturaleza: any) => {
         return naturaleza.list.map((nat: any) => {
           return {
@@ -46,7 +46,7 @@ export class IniciativaService {
 
   // Lista de VP
   getListVP(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj).pipe(
+    return this.http.post(API_INICIATIVAS, obj).pipe(
       map((listVP: any) => {
         return listVP.list.map( (vp: any) => {
           return {
@@ -60,7 +60,7 @@ export class IniciativaService {
 
   // lista ESTADOS
   getListEstados(obj: any, mapList: boolean = true): Observable<any> {
-    return this.http.post(API_INIICIATIVAS, obj).pipe(
+    return this.http.post(API_INICIATIVAS, obj).pipe(
       map((estados: any) => {
         return mapList ? estados.list.map((estado: Estados) => {
               return {
@@ -75,7 +75,7 @@ export class IniciativaService {
 
   // lista Gerencia
   getListGerencia(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj).pipe(
+    return this.http.post(API_INICIATIVAS, obj).pipe(
       map((gerenc: any) => {
         return gerenc.list.map( (ger: any) => {
           return {
@@ -88,8 +88,8 @@ export class IniciativaService {
   }
 
   // LISTADO Y BUSQUEDA DE REGISTROS PARA LA TABLA
-  buscarOcargarRegistro(id: any) {
-    return this.http.post(API_INIICIATIVAS, id).pipe(
+  buscarOcargarIniciativa(id: any) {
+    return this.http.post(API_INICIATIVAS, id).pipe(
       map((registro: any) => {
         return registro.list.map((reg: any) => {
           return {
@@ -112,23 +112,23 @@ export class IniciativaService {
 
   //INSERTAR REGISTRO A LA TABLA
   crearIniciativa(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj);
+    return this.http.post(API_INICIATIVAS, obj);
   }
 
   eliminarIniciativa(id: number) {
-    return this.http.post(API_INIICIATIVAS, id);
+    return this.http.post(API_INICIATIVAS, id);
   }
 
   cargarRegistroId(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj)
+    return this.http.post(API_INICIATIVAS, obj)
   }
 
   actualizarRegistro(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj);
+    return this.http.post(API_INICIATIVAS, obj);
   }
 
   cargarIniciatCambios(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj).pipe(
+    return this.http.post(API_INICIATIVAS, obj).pipe(
       map((histCamb: any) => {
         return histCamb.list.map( (historico: any) => {
           return {
@@ -146,7 +146,7 @@ export class IniciativaService {
   }
 
   agregarIniciativaCambios(obj: any) {
-    return this.http.post(API_INIICIATIVAS, obj);
+    return this.http.post(API_INICIATIVAS, obj);
   }
 
 }
