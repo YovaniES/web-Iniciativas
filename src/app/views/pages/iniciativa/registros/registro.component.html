@@ -6,14 +6,14 @@
       <div class="card" style="border-radius: 2px; font-weight: 600">
         <div class="card-body" style="padding: 10px">
           <form class="row g-3" [formGroup]="filtroForm">
-            <div class="col-sm-2 cli-form-element">
+            <div class="col-sm-3 cli-form-element">
               <label class="form-label">Nombre de Iniciativa</label>
               <input
                 type="text"
                 class="form-control"
                 formControlName="nombre"/>
             </div>
-            <div class="col-sm-2 cli-form-element">
+            <div class="col-sm-3 cli-form-element">
               <label class="form-label">Código de Iniciativa</label>
               <input
                 type="text"
@@ -36,7 +36,7 @@
               </select>
             </div>
 
-            <div class="col-sm-2 cli-form-element">
+            <div class="col-sm-3 cli-form-element">
               <label class="form-label">Naturaleza del Benef.</label>
               <select class="form-select" formControlName="naturaleza">
                 <option [value]="0" disabled>--Seleccione--</option>

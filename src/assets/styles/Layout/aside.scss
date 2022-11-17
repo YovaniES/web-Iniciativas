@@ -184,6 +184,10 @@
   display: block;
 }
 
+.material-icons{
+  font-size: 18px;
+}
+
 @include mobile {
   .cli-aside {
     display: none;

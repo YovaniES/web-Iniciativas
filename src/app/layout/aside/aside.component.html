@@ -78,14 +78,11 @@
     <div
       (click)="clickToggleMenu(item)"
       [ngClass]="{ 'menu-link-open': item.displayed }"
-      class="menu-link"
-    >
+      class="menu-link">
       <i class="menu-icon"
-        ><mat-icon>{{ item.icon }}</mat-icon></i
-      >
+        ><mat-icon>{{ item.icon }}</mat-icon></i>
       <span *ngIf="fixedAside">{{ item.text }}</span>
-      <i
-        *ngIf="fixedAside"
+      <i *ngIf="fixedAside"
         [ngClass]="{ 'menu-arrow-open': item.displayed }"
         class="menu-arrow"
         ><mat-icon aria-hidden="false">keyboard_arrow_right</mat-icon>
@@ -113,8 +110,7 @@
         (click)="clickLinkMenu()"
         class="menu-link"
         [routerLink]="item.link"
-        routerLinkActive="active-link"
-      >
+        routerLinkActive="active-link">
         <i class="submenu-icon">
           <mat-icon>{{ item.icon }}</mat-icon>
         </i>
@@ -127,8 +123,7 @@
 <ng-template #subMenuItems let-item="item">
   <div
     [ngClass]="{ 'sub-menu-displayed': item.displayed && fixedAside }"
-    class="sub-menu"
-  >
+    class="sub-menu">
     <ul>
       <ng-container
         *ngFor="let submenu of item.submenus"
@@ -142,15 +137,12 @@
 <!-- SUB MENU -->
 <ng-template #subMenuItem let-item="item">
   <li>
-    <a
-      class="submenu-link"
+    <a class="submenu-link"
       [routerLink]="item.link"
       routerLinkActive="active-sublink"
-    >
-      <i class="submenu-icon">
+      ><i class="submenu-icon">
         <mat-icon>{{ item.icon }}</mat-icon>
-      </i>
-      <span>{{ item.text }}</span>
+      </i><span>{{ item.text }}</span>
     </a>
   </li>
 </ng-template>
@@ -163,7 +155,7 @@
         *ngFor="let submenu of item.submenus"
         [ngTemplateOutlet]="subMenuItemHover"
         [ngTemplateOutletContext]="{ item: submenu }"
-      ></ng-container>
+        ></ng-container>
     </ul>
   </div>
 </ng-template>
@@ -176,8 +168,7 @@
       style="padding: 10px 15px; width: 150px"
       [routerLink]="item.link"
       routerLinkActive="active-sublink"
-    >
-      <span>{{ item.text }}</span>
+      ><span>{{ item.text }}</span>
     </a>
   </li>
 </ng-template>
