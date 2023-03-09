@@ -264,27 +264,27 @@ export class ModalActualizarIniciativaComponent implements OnInit {
       // console.log('LISTA-EDITAR', resp );
       for (let i = 0; i < resp.list.length; i++) {
         this.iniciativaEditForm.controls['idIniciativa'].setValue(resp.list[i].idIniciativa);
-        this.iniciativaEditForm.controls['nombre'].setValue(resp.list[i].nombre);
-        this.iniciativaEditForm.controls['codigo'].setValue(resp.list[i].codigo);
-        this.iniciativaEditForm.controls['vp'].setValue(resp.list[i].vp);
-        this.iniciativaEditForm.controls['gerenciaSol'].setValue(resp.list[i].gerencia_solicitante);
-        this.iniciativaEditForm.controls['estado'].setValue(resp.list[i].estado);
+        this.iniciativaEditForm.controls['nombre'      ].setValue(resp.list[i].nombre);
+        this.iniciativaEditForm.controls['codigo'      ].setValue(resp.list[i].codigo);
+        this.iniciativaEditForm.controls['vp'          ].setValue(resp.list[i].vp);
+        this.iniciativaEditForm.controls['gerenciaSol' ].setValue(resp.list[i].gerencia_solicitante);
+        this.iniciativaEditForm.controls['estado'      ].setValue(resp.list[i].estado);
         this.estadoInicial = resp.list[i].estado;
-        this.iniciativaEditForm.controls['poProyecto'].setValue(resp.list[i].po_proyecto);
-        this.iniciativaEditForm.controls['responsable'].setValue(resp.list[i].responsable);
-        this.iniciativaEditForm.controls['gerenciaBen'].setValue(resp.list[i].gerencia_beneficiaria);
-        this.iniciativaEditForm.controls['planner'].setValue(resp.list[i].planner);
-        this.iniciativaEditForm.controls['contGerBen'].setValue(resp.list[i].controller_ger_ben);
-        this.iniciativaEditForm.controls['contAprBc'].setValue(resp.list[i].controller_aprob_bc);
-        this.iniciativaEditForm.controls['tecnologia'].setValue(resp.list[i].tecnologia);
-        this.iniciativaEditForm.controls['licencias'].setValue(resp.list[i].licencias);
-        this.iniciativaEditForm.controls['naturaleza'].setValue(resp.list[i].naturaleza);
-        this.iniciativaEditForm.controls['probActual'].setValue(resp.list[i].problema);
-        this.iniciativaEditForm.controls['funcRobotiz'].setValue(resp.list[i].robotizacion);
-        this.iniciativaEditForm.controls['defAlcance'].setValue(resp.list[i].alcance);
-        this.iniciativaEditForm.controls['riesgoNoRpa'].setValue(resp.list[i].riesgo);
-        this.iniciativaEditForm.controls['pi'].setValue(resp.list[i].pi);
-        this.iniciativaEditForm.controls['qtrxMes'].setValue(resp.list[i].qtrx);
+        this.iniciativaEditForm.controls['poProyecto'  ].setValue(resp.list[i].po_proyecto);
+        this.iniciativaEditForm.controls['responsable' ].setValue(resp.list[i].responsable);
+        this.iniciativaEditForm.controls['gerenciaBen' ].setValue(resp.list[i].gerencia_beneficiaria);
+        this.iniciativaEditForm.controls['planner'     ].setValue(resp.list[i].planner);
+        this.iniciativaEditForm.controls['contGerBen'  ].setValue(resp.list[i].controller_ger_ben);
+        this.iniciativaEditForm.controls['contAprBc'   ].setValue(resp.list[i].controller_aprob_bc);
+        this.iniciativaEditForm.controls['tecnologia'  ].setValue(resp.list[i].tecnologia);
+        this.iniciativaEditForm.controls['licencias'   ].setValue(resp.list[i].licencias);
+        this.iniciativaEditForm.controls['naturaleza'  ].setValue(resp.list[i].naturaleza);
+        this.iniciativaEditForm.controls['probActual'  ].setValue(resp.list[i].problema);
+        this.iniciativaEditForm.controls['funcRobotiz' ].setValue(resp.list[i].robotizacion);
+        this.iniciativaEditForm.controls['defAlcance'  ].setValue(resp.list[i].alcance);
+        this.iniciativaEditForm.controls['riesgoNoRpa' ].setValue(resp.list[i].riesgo);
+        this.iniciativaEditForm.controls['pi'          ].setValue(resp.list[i].pi);
+        this.iniciativaEditForm.controls['qtrxMes'     ].setValue(resp.list[i].qtrx);
 
         if (resp.list[i].tmo) {
            let tiempoTrx = resp.list[i].tmo.split(' ')
